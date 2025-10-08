@@ -1,0 +1,9 @@
+service: mi-backend
+provider:
+  name: aws  # O el proveedor que uses (necesitas credenciales AWS configuradas)
+functions:
+  app:
+    handler: src/server.js
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}
